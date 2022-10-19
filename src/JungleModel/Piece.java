@@ -1,4 +1,9 @@
 package JungleModel;
 
-public class Piece {
+public abstract class Piece {
+    private int rank;
+
+    public Piece() {
+    }
+
 }
