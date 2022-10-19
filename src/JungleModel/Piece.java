@@ -5,5 +5,6 @@ public abstract class Piece {
 
     public Piece() {
     }
+    protected abstract String getName();
 
 }
