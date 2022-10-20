@@ -1,6 +1,8 @@
 package JungleModel.PieceType;
 
-public class Rat {
+import JungleModel.Catagories.PieceSwim;
+
+public class Rat extends PieceSwim {
 
     public  Rat(){
     }

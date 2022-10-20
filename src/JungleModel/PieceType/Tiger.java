@@ -1,6 +1,8 @@
 package JungleModel.PieceType;
 
-public class Tiger {
+import JungleModel.Catagories.PieceJumpOverWater;
+
+public class Tiger extends PieceJumpOverWater {
     public  Tiger(){
     }
     protected String getName() {
