@@ -11,8 +11,4 @@ public class Controller {
 
     public static void movement(String dir){}
 
-    public static enum Owner{
-        user1,user2;
-        private Owner(){}
-    }
 }

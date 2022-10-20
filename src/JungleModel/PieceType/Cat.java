@@ -1,6 +1,8 @@
 package JungleModel.PieceType;
 
-public class Cat {
+import JungleModel.Catagories.NormalPiece;
+
+public class Cat extends NormalPiece {
     public  Cat(){
     }
     protected String getName() {
