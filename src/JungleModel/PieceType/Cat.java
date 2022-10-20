@@ -6,5 +6,4 @@ public class Cat {
     protected String getName() {
         return "";
     }
-    }
 }
