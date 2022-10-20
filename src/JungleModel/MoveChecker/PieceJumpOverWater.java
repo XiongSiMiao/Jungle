@@ -1,4 +1,4 @@
-package JungleModel.PieceCatagories;
+package JungleModel.MoveChecker;
 
 public class PieceJumpOverWater {
 }
