@@ -1,5 +1,6 @@
 package JungleController;
 import JungleModel.Board;
+import JungleModel.Piece;
 import Exception.WrongMovement;
 import Exception.LosePieces;
 public class Controller {
@@ -9,6 +10,8 @@ public class Controller {
     public static void start() {
     }
 
-    public static void movement(String dir){}
+    public static void movement(Piece p,String dir){}//change p.locationX and p.locationY
+
+    public boolean moveChecker(Piece p,String dir){return true;}
 
 }
