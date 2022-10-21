@@ -31,9 +31,6 @@ public class Board {
     private boolean capture() {
     }
 
-    private boolean inRiver() {
-    }
-
     private boolean inTrap() {
     }
 
