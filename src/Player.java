@@ -1,6 +1,6 @@
 import JungleController.Controller;
 
-public class Clevis {
+public class Player {
     public static void main(String[] args) {
         Controller.start();
     }

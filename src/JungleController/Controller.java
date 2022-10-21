@@ -12,11 +12,8 @@ public class Controller {
     public static void start() {
     }
 
-    public void capture() {
-    }
-
-    public static void movement(Piece p, String dir) {
-    }// change p.locationX and p.locationY
+    public static void replace(Piece p) throws LosePieces{}//replace the opponent's piece
+    public static void movement(Piece p,String dir) throws WrongMovement{}//change p.locationX and p.locationY
 
     public boolean moveChecker(Piece p, String dir) {
         return true;
