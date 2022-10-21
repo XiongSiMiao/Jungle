@@ -7,15 +7,18 @@ public class Board {
     }
 
     public boolean getWon() {
+        return true;
     }
 
     public void setWin(boolean win) {
     }
 
     public boolean getTurn() {
+        return true;
     }
 
     public boolean setTurn() {
+        return true;
     }
 
     public void reset() {
@@ -29,11 +32,14 @@ public class Board {
     }
 
     private boolean capture() {
+        return true;
     }
 
     private boolean inTrap() {
+        return true;
     }
 
     private boolean jumpOverRiver() {
+        return true;
     }
 }
