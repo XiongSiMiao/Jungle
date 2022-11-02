@@ -17,12 +17,4 @@ class PieceTest {
     @Test
     void move() {
     }
-
-    @Test
-    void getX() {
-    }
-
-    @Test
-    void getY() {
-    }
 }

@@ -1,33 +1,29 @@
 package test.model.pieceType;
 
+import JungleModel.PieceType.Rat;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class RatTest {
 
+    Rat r = new Rat(1,1,4,6);
     @Test
     void getCategory() {
-        assertEquals(3,3);
+        assertEquals(3,r.getCategory());
     }
-
-    @Test
-    void setPiece() {
-    }
-
-    @Test
-    void move() {
-    }
-
     @Test
     void getX() {
+        assertEquals(4,r.getX());
     }
 
     @Test
     void getY() {
+        assertEquals(6,r.getY());
     }
 
     @Test
     void getName() {
+        assertEquals("Rat",r.getName());
     }
 }

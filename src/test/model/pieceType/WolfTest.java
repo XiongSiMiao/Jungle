@@ -1,33 +1,24 @@
 package test.model.pieceType;
 
+import JungleModel.PieceType.Wolf;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class WolfTest {
 
+    Wolf w = new Wolf(4,1,3,8);
     @Test
     void getCategory() {
-        assertEquals(1,1);
+        assertEquals(1,w.getCategory());
     }
 
     @Test
-    void setPiece() {
-    }
+    void getX() {assertEquals(3,w.getX());}
 
     @Test
-    void move() {
-    }
+    void getY() {assertEquals(8,w.getY());}
 
     @Test
-    void getX() {
-    }
-
-    @Test
-    void getY() {
-    }
-
-    @Test
-    void getName() {
-    }
+    void getName() {assertEquals("Wolf",w.getName());}
 }

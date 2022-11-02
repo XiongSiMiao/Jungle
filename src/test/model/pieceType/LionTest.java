@@ -1,33 +1,24 @@
 package test.model.pieceType;
 
+import JungleModel.PieceType.Lion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class LionTest {
 
+    Lion l=new Lion(7,2,8,6);
+
     @Test
     void getCategory() {
-        assertEquals(2,2);
+        assertEquals(2,l.getCategory());
     }
+    @Test
+    void getX() {assertEquals(8,l.getX());}
 
     @Test
-    void setPiece() {
-    }
+    void getY() {assertEquals(6,l.getY());}
 
     @Test
-    void move() {
-    }
-
-    @Test
-    void getX() {
-    }
-
-    @Test
-    void getY() {
-    }
-
-    @Test
-    void getName() {
-    }
+    void getName() {assertEquals("Lion",l.getName() );}
 }

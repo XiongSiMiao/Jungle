@@ -1,33 +1,33 @@
 package test.model.pieceType;
 
+import JungleModel.PieceType.Cat;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CatTest {
 
+    Cat c = new Cat(2,1,5,2);
+
+
     @Test
     void getCategory() {
-        assertEquals(1,1);
-    }
-
-    @Test
-    void setPiece() {
-    }
-
-    @Test
-    void move() {
+        assertEquals(1,c.getCategory());
     }
 
     @Test
     void getX() {
+        assertEquals(5,c.getX());
     }
 
     @Test
     void getY() {
+        assertEquals(2,c.getY());
     }
 
     @Test
     void getName() {
+        assertEquals("Cat",c.getName());
     }
 }

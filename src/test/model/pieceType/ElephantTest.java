@@ -1,33 +1,31 @@
 package test.model.pieceType;
 
+import JungleModel.PieceType.Elephant;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ElephantTest {
 
+    Elephant e = new Elephant(8,2,3,3);
     @Test
     void getCategory() {
-        assertEquals(1,1);
+        assertEquals(1,e.getCategory());
     }
 
-    @Test
-    void setPiece() {
-    }
-
-    @Test
-    void move() {
-    }
 
     @Test
     void getX() {
+        assertEquals(3,e.getX());
     }
 
     @Test
     void getY() {
+        assertEquals(3,e.getY());
     }
 
     @Test
     void getName() {
+        assertEquals("Elephant",e.getName());
     }
 }

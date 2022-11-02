@@ -5,7 +5,13 @@ import JungleModel.Catagories.PieceJumpOverWater;
 public class Lion extends PieceJumpOverWater {
     public  Lion(){
     }
-    protected String getName() {
-        return "";
+    public Lion(int rank,int owner,int locationX,int locationY){
+        this.locationX=locationX;
+        this.locationY=locationY;
+        this.owner=owner;
+        this.rank=rank;
+    }
+    public String getName() {
+        return "Lion";
     }
 }
