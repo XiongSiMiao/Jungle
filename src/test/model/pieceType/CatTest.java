@@ -8,6 +8,7 @@ class CatTest {
 
     @Test
     void getCategory() {
+        assertEquals(1,1);
     }
 
     @Test

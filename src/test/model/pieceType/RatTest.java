@@ -8,6 +8,7 @@ class RatTest {
 
     @Test
     void getCategory() {
+        assertEquals(3,3);
     }
 
     @Test

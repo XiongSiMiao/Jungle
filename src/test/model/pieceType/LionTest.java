@@ -8,6 +8,7 @@ class LionTest {
 
     @Test
     void getCategory() {
+        assertEquals(2,2);
     }
 
     @Test

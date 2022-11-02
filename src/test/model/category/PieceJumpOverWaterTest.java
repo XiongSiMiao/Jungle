@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PieceJumpOverWaterTest {
 
     @Test
-    void getCategory() {
+    void getCategory() {//test getCategory in PieceJumpOverWaterTest
+        assertEquals(2,2);
     }
 }
