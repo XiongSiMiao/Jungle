@@ -1,25 +1,28 @@
 package test.model;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 class PieceTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void setPiece() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getName() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void move() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getX() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getY() {
     }
 }
