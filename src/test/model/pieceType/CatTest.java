@@ -7,6 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class CatTest {
 
     @Test
+    void getCategory() {
+    }
+
+    @Test
     void setPiece() {
     }
 
