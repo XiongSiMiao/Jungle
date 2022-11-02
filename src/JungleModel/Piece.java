@@ -16,13 +16,13 @@ public abstract class Piece {
         return this;
     }
 
-    private boolean canReplace(Piece p2) {
+    public boolean canReplace(Piece p2) {
         return true;
     }
 
     protected abstract String getName();
 
-    protected void move() {
+    public void move() {
     }
 
     public int getX() {
