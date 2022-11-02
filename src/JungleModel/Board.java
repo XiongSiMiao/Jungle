@@ -35,10 +35,6 @@ public class Board {
         return true;
     }
 
-    private boolean inRiver() {
-        return true;
-    }
-
     private boolean inTrap() {
         return true;
     }
