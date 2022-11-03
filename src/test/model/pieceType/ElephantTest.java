@@ -28,4 +28,8 @@ class ElephantTest {
     void getName() {
         assertEquals("Elephant",e.getName());
     }
+    @Test
+    void getOwner() {assertEquals(2,e.getOwner());}
+    @Test
+    void getRank() {assertEquals(8,e.getRank());}
 }

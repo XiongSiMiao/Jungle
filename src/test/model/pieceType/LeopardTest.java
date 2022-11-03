@@ -20,4 +20,8 @@ class LeopardTest {
 
     @Test
     void getName() {assertEquals("Leopard",lp.getName());}
+    @Test
+    void getOwner() {assertEquals(2,lp.getOwner());}
+    @Test
+    void getRank() {assertEquals(5,lp.getRank());}
 }

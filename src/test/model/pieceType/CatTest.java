@@ -30,4 +30,8 @@ class CatTest {
     void getName() {
         assertEquals("Cat",c.getName());
     }
+    @Test
+    void getOwner() {assertEquals(1,c.getOwner());}
+    @Test
+    void getRank() {assertEquals(2,c.getRank());}
 }

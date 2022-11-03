@@ -4,6 +4,7 @@ import JungleModel.PieceType.Cat;
 import JungleModel.PieceType.Rat;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PieceTest {
@@ -17,5 +18,9 @@ class PieceTest {
 
     @Test
     void move() {
+        /*just assumption
+        char movement= 'a';
+        assertEquals(4,--c.locationX);
+        */
     }
 }

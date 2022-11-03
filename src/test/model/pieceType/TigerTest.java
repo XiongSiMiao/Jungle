@@ -21,4 +21,8 @@ class TigerTest {
 
     @Test
     void getName() {assertEquals("Tiger",t.getName());}
+    @Test
+    void getOwner() {assertEquals(2,t.getOwner());}
+    @Test
+    void getRank() {assertEquals(6,t.getRank());}
 }

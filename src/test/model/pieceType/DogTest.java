@@ -29,4 +29,8 @@ class DogTest {
     void getName() {
         assertEquals("Dog", d.getName());
     }
+    @Test
+    void getOwner() {assertEquals(1,d.getOwner());}
+    @Test
+    void getRank() {assertEquals(3,d.getRank());}
 }

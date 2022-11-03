@@ -32,5 +32,9 @@ public abstract class Piece {
     public int getY() {
         return this.locationY;
     }
+    public int getRank() {return this.rank;}
+    public int getOwner() {
+        return this.owner;
+    }
 
 }

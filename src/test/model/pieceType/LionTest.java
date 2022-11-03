@@ -21,4 +21,8 @@ class LionTest {
 
     @Test
     void getName() {assertEquals("Lion",l.getName() );}
+    @Test
+    void getOwner() {assertEquals(2,l.getOwner());}
+    @Test
+    void getRank() {assertEquals(7,l.getRank());}
 }

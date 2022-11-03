@@ -26,4 +26,8 @@ class RatTest {
     void getName() {
         assertEquals("Rat",r.getName());
     }
+    @Test
+    void getOwner() {assertEquals(1,r.getOwner());}
+    @Test
+    void getRank() {assertEquals(1,r.getRank());}
 }

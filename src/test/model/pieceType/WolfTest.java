@@ -21,4 +21,8 @@ class WolfTest {
 
     @Test
     void getName() {assertEquals("Wolf",w.getName());}
+    @Test
+    void getOwner() {assertEquals(1,w.getOwner());}
+    @Test
+    void getRank() {assertEquals(4,w.getRank());}
 }
