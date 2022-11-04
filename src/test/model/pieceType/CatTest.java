@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CatTest {
 
     Cat c = new Cat(2,1,5,2);
+    //Set a cat to be tested and also test the construction methods of class cat
 
 
     @Test

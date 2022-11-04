@@ -8,21 +8,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class LionTest {
 
     Lion l=new Lion(7,2,8,6);
+    //Set a lion to be tested and also test the construction methods of class lion
 
     @Test
     void getCategory() {
         assertEquals(2,l.getCategory());
-    }
+    }// Test getCategory() in class PieceJumpOverWater
     @Test
-    void getX() {assertEquals(8,l.getX());}
+    void getX() {assertEquals(8,l.getX());}// Test getX() in class Piece
 
     @Test
-    void getY() {assertEquals(6,l.getY());}
+    void getY() {assertEquals(6,l.getY());}// Test getY() in class Piece
 
     @Test
-    void getName() {assertEquals("Lion",l.getName() );}
+    void getName() {assertEquals("Lion",l.getName() );}// Test getName() in class Lion
     @Test
-    void getOwner() {assertEquals(2,l.getOwner());}
+    void getOwner() {assertEquals(2,l.getOwner());}// Test getOwner() in class Piece
     @Test
-    void getRank() {assertEquals(7,l.getRank());}
+    void getRank() {assertEquals(7,l.getRank());}// Test getRank() in class Piece
 }
