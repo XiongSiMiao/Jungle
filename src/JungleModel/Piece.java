@@ -22,7 +22,7 @@ public abstract class Piece {
 
     protected abstract String getName();
 
-    public void move() {
+    public void move(int locationX, int locationY) {
     }
 
     public int getX() {

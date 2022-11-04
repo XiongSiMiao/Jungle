@@ -13,7 +13,6 @@ class PieceTest {
     Cat c=new Cat(2,1,5,5);
     Rat r=new Rat(1,2,5,5);
 
-
     @Test
     void canReplace(){
         assertTrue(c.canReplace(r));
@@ -21,6 +20,7 @@ class PieceTest {
 
     @Test
     void move() {
+        assertTrue(r.move(5,6));
         /*just assumption
         char movement= 'a';
         assertEquals(4,--c.locationX);
