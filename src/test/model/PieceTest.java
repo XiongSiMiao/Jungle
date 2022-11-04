@@ -18,6 +18,7 @@ class PieceTest {
         assertTrue(c.canReplace(r));
     }// Test canReplace() in class Piece
 
+
     @Test
     void move() {//Test move() in class Piece, test if r can move to (5,6)
         r.move(5,6);

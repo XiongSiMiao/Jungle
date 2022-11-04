@@ -1,7 +1,7 @@
 package JungleModel;
 
 public class Board {
-    private boolean win;
+    private Boolean win;
 
     public Board() {
     }
@@ -10,7 +10,8 @@ public class Board {
         return null;
     }
 
-    public void setWin(boolean win) {
+    public Boolean setWin(Boolean win) {
+        return null;
     }
 
     public boolean getTurn() {
@@ -18,7 +19,7 @@ public class Board {
     }
 
     public boolean setTurn() {
-        return true;
+        return false;
     }
 
     public void reset() {
@@ -35,11 +36,11 @@ public class Board {
         return true;
     }
 
-    private boolean inTrap() {
+    public boolean inTrap() {
         return true;
     }
 
-    private boolean jumpOverRiver() {
+    public boolean jumpOverRiver() {
         return true;
     }
 }

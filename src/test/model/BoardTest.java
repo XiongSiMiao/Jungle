@@ -15,17 +15,25 @@ class BoardTest {
     void getWon() {//Test getWon() in class Board
         assertEquals(win,board.getWon());
     }
-
-    @Test
-    void setWin() {
-        assertEquals(win, board.setWin(turn));
-    }
-
     @Test
     void getTurn() {//Test getTurn in class Board
         assertEquals(turn,board.getTurn());
     }
 
+    @Test
+    void jumpOverRiver(){//Test jumpOverRiver in class Board
+        assertTrue(board.jumpOverRiver());
+    }
+
+    @Test
+    void inTrap(){// Test inTrap in class Board
+        assertTrue(board.inTrap());
+    }
+
+    @Test
+    void setWin(){
+        assertEquals(null,board.setWin(win));
+    }
     @Test
     void setTurn() {
         assertEquals(!turn,board.setTurn());
