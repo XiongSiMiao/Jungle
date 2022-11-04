@@ -23,6 +23,8 @@ public abstract class Piece {
     protected abstract String getName();
 
     public void move(int locationX, int locationY) {
+        this.locationX=locationX;
+        this.locationY=locationY;
     }
 
     public int getX() {

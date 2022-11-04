@@ -19,11 +19,9 @@ class PieceTest {
     }// Test canReplace() in class Piece
 
     @Test
-    void move() {
-        assertTrue(r.move(5,6));
-        /*just assumption
-        char movement= 'a';
-        assertEquals(4,--c.locationX);
-        */
+    void move() {//Test move() in class Piece, test if r can move to (5,6)
+        r.move(5,6);
+        assertEquals(5,r.getX());
+        assertEquals(6,r.getY());
     }
 }
