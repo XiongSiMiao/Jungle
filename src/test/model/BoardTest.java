@@ -12,7 +12,7 @@ class BoardTest {
     boolean turn = true;//true means owner 1, false means owner 2
     Boolean win = null;//true means owner 1 won, false means owner 2 won, null means still playing
     @Test
-    void getWon() {
+    void getWon() {//Test getWon() in class Board
         assertEquals(win,board.getWon());
     }
 
@@ -22,17 +22,13 @@ class BoardTest {
     }
 
     @Test
-    void getTurn() {
+    void getTurn() {//Test getTurn in class Board
         assertEquals(turn,board.getTurn());
     }
 
     @Test
     void setTurn() {
-        assertEquals(!turn,board.setTurn());//set turn into false if it is true;
-    }
-
-    @Test
-    void reset() { 
-        assertEquals(true,board.reset());
+        assertEquals(!turn,board.setTurn());
+        //Test setTurn() in class board(set turn into false if it is true;)
     }
 }
