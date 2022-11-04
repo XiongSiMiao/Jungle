@@ -6,8 +6,8 @@ public class Board {
     public Board() {
     }
 
-    public boolean getWon() {
-        return true;
+    public Boolean getWon() {
+        return null;
     }
 
     public void setWin(boolean win) {
