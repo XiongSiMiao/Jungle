@@ -14,6 +14,7 @@ public class View {
 
     public void printBoard(){
         //在报错！没对齐！！
+        /*
         for(int j=0;j<7;j++){
             for (int i=0;i<10;i++){
                 if(i==9){
@@ -31,7 +32,16 @@ public class View {
                 else
                     System.out.print(Board.boardTypes.Land.getName());
             }
-        }
+        }*/
+        /*也对不齐T_T
+        String map="   "+"   "+"   "+"   "+"   "+"   "+"   "+"   "+"   "+"\n"+
+                "   "+"   "+"   "+Board.boardTypes.River.getName()+Board.boardTypes.River.getName()+Board.boardTypes.River.getName()+"   "+"   "+"   "+"\n"+
+                Board.boardTypes.Trap.getName()+"   "+"   "+Board.boardTypes.River.getName()+Board.boardTypes.River.getName()+Board.boardTypes.River.getName()+"   "+"   "+Board.boardTypes.Trap.getName()+"\n"+
+                Board.boardTypes.Den.getName()+Board.boardTypes.Trap.getName()+"   "+"   "+"   "+"   "+"   "+Board.boardTypes.Trap.getName()+Board.boardTypes.Den.getName()+"\n"+
+                Board.boardTypes.Trap.getName()+"   "+"   "+Board.boardTypes.River.getName()+Board.boardTypes.River.getName()+Board.boardTypes.River.getName()+"   "+"   "+Board.boardTypes.Trap.getName()+"\n"+
+                "   "+"   "+"   "+Board.boardTypes.River.getName()+Board.boardTypes.River.getName()+Board.boardTypes.River.getName()+"   "+"   "+"   "+"\n"+
+                "   "+"   "+"   "+"   "+"   "+"   "+"   "+"   "+"   "+"\n";
+        System.out.println(map);*/
     }
 
     public void printPieces(){}

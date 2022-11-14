@@ -26,7 +26,6 @@ public class Board {
     }
 
     public void reset() {
-        this.piecesInitialize();
     }
 
     public static enum boardTypes {
