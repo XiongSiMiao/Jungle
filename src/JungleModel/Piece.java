@@ -17,6 +17,10 @@ public abstract class Piece {
     }
 
     public boolean canReplace(Piece p2) {
+        /* if 2 pieces are at the same place,
+        and rank of piece1 > rank of piece2 (except rat and elephant),
+        then piece1 can replace piece2.
+        */
         boolean flag=false;
         int x1=this.getX();
         int x2= p2.getX();
