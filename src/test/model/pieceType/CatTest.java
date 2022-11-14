@@ -29,7 +29,7 @@ class CatTest {
 
     @Test
     void getName() {
-        assertEquals("Cat",c.getName());
+        assertEquals("1猫 ",c.getName());
     }
     @Test
     void getOwner() {assertEquals(1,c.getOwner());}

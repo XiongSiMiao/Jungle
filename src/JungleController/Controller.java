@@ -4,12 +4,12 @@ import JungleModel.Board;
 import JungleModel.Piece;
 import Exception.WrongMovement;
 import Exception.LosePieces;
-
 public class Controller {
     public Controller() {
     }
 
     public static void start() {
+        Board board=new Board();
     }
     
 

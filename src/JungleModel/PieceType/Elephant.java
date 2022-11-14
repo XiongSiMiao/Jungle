@@ -12,6 +12,9 @@ public class Elephant extends NormalPiece {
         this.rank=rank;
     }
     public String getName() {
-        return "Elephant";
+        if(this.owner==1)
+            return "1象 ";
+        else
+            return " 象2";
     }
 }

@@ -12,6 +12,9 @@ public class Lion extends PieceJumpOverWater {
         this.rank=rank;
     }
     public String getName() {
-        return "Lion";
+        if(this.owner==1)
+            return "1狮 ";
+        else
+            return " 狮2";
     }
 }

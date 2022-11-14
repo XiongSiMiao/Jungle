@@ -1,5 +1,6 @@
 package test.model;
 
+import JungleModel.PieceType.Cat;
 import org.junit.jupiter.api.Test;
 
 import JungleModel.Board;
@@ -9,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BoardTest {
 
     Board board = new Board();
+    Cat c=new Cat(2,2,2,4);
     boolean turn = true;//true means owner 1, false means owner 2
     Boolean win = null;//true means owner 1 won, false means owner 2 won, null means still playing
     @Test
@@ -27,7 +29,7 @@ class BoardTest {
 
     @Test
     void inTrap(){// Test inTrap in class Board
-        assertTrue(board.inTrap());
+        assertTrue(board.inTrap(c));
     }
 
     @Test

@@ -28,7 +28,7 @@ class DogTest {
 
     @Test
     void getName() {
-        assertEquals("Dog", d.getName());
+        assertEquals("1狗 ", d.getName());
     }// Test getName() in class Dog
     @Test
     void getOwner() {assertEquals(1,d.getOwner());}// Test getOwner() in class Piece

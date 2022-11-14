@@ -21,7 +21,7 @@ class WolfTest {
     void getY() {assertEquals(8,w.getY());} //Test getY() in class Piece
 
     @Test
-    void getName() {assertEquals("Wolf",w.getName());} // Test getName() in class Wolf
+    void getName() {assertEquals("1狼 ",w.getName());} // Test getName() in class Wolf
     @Test
     void getOwner() {assertEquals(1,w.getOwner());} // Test getOwner() in class Piece
     @Test

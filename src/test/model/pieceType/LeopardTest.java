@@ -20,7 +20,7 @@ class LeopardTest {
     void getY() {assertEquals(1,lp.getY());}// Test getY() in class Piece
 
     @Test
-    void getName() {assertEquals("Leopard",lp.getName());}// Test getName() in class Leopard
+    void getName() {assertEquals(" 豹2",lp.getName());}// Test getName() in class Leopard
     @Test
     void getOwner() {assertEquals(2,lp.getOwner());}// Test getOwner() in class Piece
     @Test

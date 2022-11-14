@@ -12,6 +12,9 @@ public class Dog extends NormalPiece {
         this.rank=rank;
     }
     public String getName() {
-        return "Dog";
+        if(this.owner==1)
+            return "1狗 ";
+        else
+            return " 狗2";
     }
 }

@@ -13,6 +13,9 @@ public class Rat extends PieceSwim {
         this.rank=rank;
     }
     public String getName() {
-        return "Rat";
+        if(this.owner==1)
+            return "1鼠 ";
+        else
+            return " 鼠2";
     }
 }

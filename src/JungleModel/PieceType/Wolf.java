@@ -12,6 +12,9 @@ public class Wolf extends NormalPiece {
         this.rank=rank;
     }
     public String getName() {
-        return "Wolf";
+        if(this.owner==1)
+            return "1狼 ";
+        else
+            return " 狼2";
     }
 }

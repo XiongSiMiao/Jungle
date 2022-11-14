@@ -12,6 +12,9 @@ public class Leopard extends NormalPiece {
         this.rank=rank;
     }
     public String getName() {
-        return "Leopard";
+        if(this.owner==1)
+            return "1豹 ";
+        else
+            return " 豹2";
     }
 }

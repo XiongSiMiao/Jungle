@@ -12,6 +12,9 @@ public class Tiger extends PieceJumpOverWater {
         this.rank=rank;
     }
     public String getName() {
-        return "Tiger";
+        if(this.owner==1)
+            return "1虎 ";
+        else
+            return " 虎2";
     }
 }

@@ -27,7 +27,7 @@ class ElephantTest {
 
     @Test
     void getName() {// Test getName() in class Elephant
-        assertEquals("Elephant",e.getName());
+        assertEquals(" 象2",e.getName());
     }
     @Test
     void getOwner() {assertEquals(2,e.getOwner());}// Test getOwner() in class Piece
