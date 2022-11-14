@@ -2,6 +2,7 @@ package JungleController;
 
 import JungleModel.Board;
 import JungleModel.Piece;
+import JungleView.View;
 import Exception.WrongMovement;
 import Exception.LosePieces;
 
@@ -14,6 +15,7 @@ public class Controller {
 
     public static void start() {
         Board board=new Board();
+        View view=new View();
         Scanner scan = new Scanner(System.in);
         String input = scan.next();
         while(input != "quit"){
@@ -28,16 +30,18 @@ public class Controller {
             缺少一个边界检查
              */
             case "w":
-                p.locationY=p.locationY+1;
+                p.move(p.getX(),p.getY()+1);
                 break;
             case "a":
-                p.locationX=p.locationX-1;
+                p.move(p.getX()-1,p.getY());
                 break;
             case "s":
-                p.locationY=p.locationY-1;
+                p.move(p.getX(),p.getY()-1);
                 break;
             case "d":
-                p.locationX=p.locationX+1;
+                p.move(p.getX()+1,p.getY());
+                break;
+            default:
                 break;
         }
     }//change p.locationX and p.locationY
