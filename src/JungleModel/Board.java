@@ -35,7 +35,7 @@ public class Board {
         Land("   ");
 
         private final String name;
-        private boardTypes(String name) {
+        boardTypes(String name) {
             this.name=name;
         }
     }

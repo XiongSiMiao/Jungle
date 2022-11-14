@@ -4,14 +4,22 @@ import JungleModel.Board;
 import JungleModel.Piece;
 import Exception.WrongMovement;
 import Exception.LosePieces;
+
+import java.util.Scanner;
+
 public class Controller {
     public Controller() {
+
     }
 
     public static void start() {
         Board board=new Board();
+        Scanner scan = new Scanner(System.in);
+        String input = scan.next();
+        while(input != "quit"){
+        }
     }
-    
+
 
     public static void replace(Piece p) throws LosePieces{}//replace the opponent's piece
     public static void movement(Piece p,String dir) throws WrongMovement{
