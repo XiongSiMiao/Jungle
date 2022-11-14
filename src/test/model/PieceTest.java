@@ -1,6 +1,7 @@
 package test.model;
 
 import JungleModel.PieceType.Cat;
+import JungleModel.PieceType.Elephant;
 import JungleModel.PieceType.Rat;
 import org.junit.jupiter.api.Test;
 
@@ -12,10 +13,13 @@ class PieceTest {
     //Set two kinds of pieces for following tests
     Cat c=new Cat(2,1,5,5);
     Rat r=new Rat(1,2,5,5);
+    Elephant e=new Elephant(8,1,5,5);
 
     @Test
     void canReplace(){
         assertTrue(c.canReplace(r));
+        assertTrue(r.canReplace(e));
+        assertTrue(!e.canReplace(r));
     }// Test canReplace() in class Piece
 
 

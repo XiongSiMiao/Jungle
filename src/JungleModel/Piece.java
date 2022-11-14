@@ -17,7 +17,27 @@ public abstract class Piece {
     }
 
     public boolean canReplace(Piece p2) {
-        return true;
+        boolean flag=false;
+        int x1=this.getX();
+        int x2= p2.getX();
+        int y1=this.getY();
+        int y2= p2.getY();
+        int rank1=this.getRank();
+        int rank2=p2.getRank();
+        int owner1=this.getOwner();
+        int owner2= p2.getOwner();
+        if((x1==x2)&&(y1==y2)&&(owner1!=owner2)){
+            if(rank1==1&&rank2==8){
+                flag=true;
+            }
+            if(rank1>rank2){
+                flag=true;
+                if(rank1==8&&rank2==1){
+                    flag=false;
+                }
+            }
+        }
+        return flag;
     }
 
     protected abstract String getName();
