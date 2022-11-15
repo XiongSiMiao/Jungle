@@ -10,11 +10,15 @@ public class Cat extends NormalPiece {
         this.locationY=locationY;
         this.owner=owner;
         this.rank=rank;
+        setName();
     }
     public String getName() {
         if(this.owner==1)
-            return "1猫 ";
+            return "1貓 ";
         else
-            return " 猫2";
+            return " 貓2";
+    }
+    public void setName(){//new added
+        this.name=getName();
     }
 }

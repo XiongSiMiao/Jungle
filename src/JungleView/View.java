@@ -3,8 +3,21 @@ package JungleView;
 import JungleModel.Board;
 
 public class View {
-    public View(){}
-    public void printBoard(){
+    public View(){}//沒對齊
+    public void printBoard(Board board){
+        for(int i=0;i<9;i++){
+            for(int j=0;j<7;j++){
+                System.out.printf("|"+"%s"+"|",board.map[i][j].getName());
+            }
+            System.out.println();
+        }
     }
-    public void printPieces(){}
+    public void printPieces(Board board){
+        for(int i=0;i<9;i++){
+            for(int j=0;j<7;j++){
+                System.out.printf("|"+"%s"+"|",board.tile[i][j].name);
+            }
+            System.out.println();
+        }
+    }
 }

@@ -26,12 +26,13 @@ public class Controller {
 
     public static void replace(Piece p) throws LosePieces{}//replace the opponent's piece
 
-    public class emptyPiece extends Piece{//set an empty piece
-        emptyPiece(int locationX,int locationY){
+    public static class emptyPiece extends Piece{//set an empty piece
+        public emptyPiece(int locationX, int locationY){
             this.locationX=locationX;
             this.locationY=locationY;
             this.owner=0;
             this.rank=0;
+            this.name="   ";
         }
         @Override
         protected String getName() {

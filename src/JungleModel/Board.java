@@ -1,5 +1,6 @@
 package JungleModel;
 
+import JungleController.Controller;
 import JungleModel.PieceType.*;
 
 public class Board {
@@ -46,24 +47,33 @@ public class Board {
         }
     }
     private void boardInitialize(){//new added
+        map[0][3]=boardTypes.Den;
+        map[8][3]=boardTypes.Den;
+        map[0][2]=boardTypes.Trap;
+        map[0][4]=boardTypes.Trap;
+        map[8][2]=boardTypes.Trap;
+        map[8][4]=boardTypes.Trap;
+        map[1][3]=boardTypes.Trap;
+        map[7][3]=boardTypes.Trap;
         for(int j=0;j<7;j++){
             for (int i=0;i<9;i++){
-                if((i==0&&j==3)||(i==8&&j==3)){
-                    map[i][j]=Board.boardTypes.Den;
-                }
-                if((i==0&&j==2)||(i==0&&j==4)||(i==8&&j==2)||(i==8&&j==4)||(i==1&&j==3)||(i==7&&j==3)){
-                    map[i][j]=(Board.boardTypes.Trap);
-                }
                 if((i==3||i==4||i==5)&&(j!=0||j!=3||j!=6)){
-                    map[i][j]=(Board.boardTypes.River);
+                    map[i][j]=boardTypes.River;
                 }
-                else
-                    map[i][j]=(Board.boardTypes.Land);
+                if(map[i][j]==null)
+                    map[i][j]=boardTypes.Land;
             }
         }
     }
 
     private void piecesInitialize() {//Set all the pieces in 9x7 board
+        for(int i=0;i<9;i++){
+            for(int j=0;j<7;j++){
+                Piece nullPiece=new Controller.emptyPiece(i,j);
+                tile[i][j]=nullPiece;
+            }
+        }
+
         Rat r1=new Rat(1,1,2,0);
         tile[2][0]=r1;
         Rat r2=new Rat(1,2,6,6);

@@ -5,6 +5,7 @@ public abstract class Piece {
     public int owner;// owner=1-->player1 ; owner=2-->player2
     public int locationX;
     public int locationY;
+    public String name;//new added
 
     public Piece() {
     }

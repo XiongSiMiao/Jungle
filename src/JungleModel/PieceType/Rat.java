@@ -11,11 +11,15 @@ public class Rat extends PieceSwim {
         this.locationY=locationY;
         this.owner=owner;
         this.rank=rank;
+        setName();
     }
     public String getName() {
         if(this.owner==1)
             return "1鼠 ";
         else
             return " 鼠2";
+    }
+    public void setName(){//new added
+        this.name=getName();
     }
 }

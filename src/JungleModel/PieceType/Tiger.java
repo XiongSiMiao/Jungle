@@ -10,11 +10,15 @@ public class Tiger extends PieceJumpOverWater {
         this.locationY=locationY;
         this.owner=owner;
         this.rank=rank;
+        setName();
     }
     public String getName() {
         if(this.owner==1)
             return "1虎 ";
         else
             return " 虎2";
+    }
+    public void setName(){//new added
+        this.name=getName();
     }
 }

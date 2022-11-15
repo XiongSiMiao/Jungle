@@ -10,11 +10,15 @@ public class Wolf extends NormalPiece {
         this.locationY=locationY;
         this.owner=owner;
         this.rank=rank;
+        setName();
     }
     public String getName() {
         if(this.owner==1)
             return "1狼 ";
         else
             return " 狼2";
+    }
+    public void setName(){//new added
+        this.name=getName();
     }
 }
