@@ -4,9 +4,12 @@ import JungleModel.PieceType.*;
 
 public class Board {
     private Boolean win;
+    public final Piece[][] tile = new Piece[20][20];//contain all the pieces, new added
+    public final boardTypes[][] map=new boardTypes[20][20];// contain all the boardTypes, new added
 
     public Board() {
         piecesInitialize();
+        boardInitialize();
     }
 
     public Boolean getWon() {
@@ -42,24 +45,57 @@ public class Board {
             return name;
         }
     }
+    private void boardInitialize(){//new added
+        for(int j=0;j<7;j++){
+            for (int i=0;i<9;i++){
+                if((i==0&&j==3)||(i==8&&j==3)){
+                    map[i][j]=Board.boardTypes.Den;
+                }
+                if((i==0&&j==2)||(i==0&&j==4)||(i==8&&j==2)||(i==8&&j==4)||(i==1&&j==3)||(i==7&&j==3)){
+                    map[i][j]=(Board.boardTypes.Trap);
+                }
+                if((i==3||i==4||i==5)&&(j!=0||j!=3||j!=6)){
+                    map[i][j]=(Board.boardTypes.River);
+                }
+                else
+                    map[i][j]=(Board.boardTypes.Land);
+            }
+        }
+    }
 
     private void piecesInitialize() {//Set all the pieces in 9x7 board
         Rat r1=new Rat(1,1,2,0);
+        tile[2][0]=r1;
         Rat r2=new Rat(1,2,6,6);
+        tile[6][6]=r2;
         Cat c1=new Cat(2,1,1,5);
+        tile[1][5]=c1;
         Cat c2=new Cat(2,2,7,1);
+        tile[7][1]=c2;
         Dog d1=new Dog(3,1,1,1);
+        tile[1][1]=d1;
         Dog d2=new Dog(3,2,7,5);
+        tile[7][5]=d2;
         Wolf w1=new Wolf(4,1,2,4);
+        tile[2][4]=w1;
         Wolf w2=new Wolf(4,2,6,2);
+        tile[6][2]=w2;
         Leopard leo1=new Leopard(5,1,2,2);
+        tile[2][2]=leo1;
         Leopard leo2=new Leopard(5,2,6,4);
+        tile[6][4]=leo2;
         Tiger t1=new Tiger(6,1,0,6);
+        tile[0][6]=t1;
         Tiger t2=new Tiger(6,2,8,0);
+        tile[8][0]=t2;
         Lion lion1=new Lion(7,1,0,0);
+        tile[0][0]=lion1;
         Lion lion2=new Lion(7,2,8,6);
+        tile[8][6]=lion2;
         Elephant e1=new Elephant(8,1,2,6);
+        tile[2][6]=e1;
         Elephant e2=new Elephant(8,2,6,0);
+        tile[6][0]=e2;
     }
 
     private boolean capture() {
