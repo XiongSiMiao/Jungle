@@ -4,6 +4,18 @@ import JungleModel.Board;
 
 public class View {
     public View(){}//沒對齊
+    public void viewAll(Board  board){//new added
+        for(int i=0;i<9;i++){
+            for(int j=0;j<7;j++){
+                if(board.tile[i][j].name!="   ") {
+                    System.out.printf("|"+"%s"+"|",board.tile[i][j].name);
+                }
+                else
+                    System.out.printf("|"+"%s"+"|",board.map[i][j].getName());
+            }
+            System.out.println();
+        }
+    }
     public void printBoard(Board board){
         for(int i=0;i<9;i++){
             for(int j=0;j<7;j++){

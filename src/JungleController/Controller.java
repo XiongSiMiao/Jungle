@@ -15,6 +15,9 @@ public class Controller {
     }
 
     public static void start() {
+        /*
+        以下都為檢測輸出結果
+         */
         Board board=new Board();
         View v=new View();
         v.printBoard(board);
@@ -22,6 +25,9 @@ public class Controller {
         movement(board.tile[0][0],"w",board);
         System.out.println();
         v.printPieces(board);
+        System.out.println();
+        movement(board.tile[2][0],"w",board);
+        v.viewAll(board);
     }
 
 
