@@ -30,6 +30,7 @@ public class Board {
     }
 
     public void reset() {
+        piecesInitialize();
     }
 
     public static enum boardTypes {
@@ -128,6 +129,7 @@ public class Board {
     }
 
     public boolean jumpOverRiver() {
+
         return true;
     }
 }

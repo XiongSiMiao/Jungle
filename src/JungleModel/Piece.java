@@ -31,13 +31,13 @@ public abstract class Piece {
         int rank2=p2.getRank();
         int owner1=this.getOwner();
         int owner2= p2.getOwner();
-        if((x1==x2)&&(y1==y2)&&(owner1!=owner2)){
-            if(rank1==1&&rank2==8){
+        if((x1==x2)&&(y1==y2)&&(owner1!=owner2)){// two pieces are at the same place and have different owners.
+            if(rank1==1&&rank2==8){//rat can eat elephant
                 flag=true;
             }
             if(rank1>rank2){
                 flag=true;
-                if(rank1==8&&rank2==1){
+                if(rank1==8&&rank2==1){//elephant can not eat rat
                     flag=false;
                 }
             }
