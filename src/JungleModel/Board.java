@@ -57,7 +57,7 @@ public class Board {
         map[7][3]=boardTypes.Trap;
         for(int j=0;j<7;j++){
             for (int i=0;i<9;i++){
-                if((i==3||i==4||i==5)&&(j!=0||j!=3||j!=6)){
+                if((i==3||i==4||i==5)&&(j==1||j==2||j==4||j==5)){
                     map[i][j]=boardTypes.River;
                 }
                 if(map[i][j]==null)
