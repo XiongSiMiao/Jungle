@@ -31,7 +31,7 @@ public class Controller {
     }
 
 
-    public static void replace(Piece p) throws LosePieces{}//replace the opponent's piece
+    public static void replace(Piece p) {}//replace the opponent's piece
 
     public static class emptyPiece extends Piece{//set an empty piece
         public emptyPiece(int locationX, int locationY){
