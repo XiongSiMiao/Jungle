@@ -21,6 +21,9 @@ public class Board {
         return null;
     }
 
+    /*
+    下面兩個關於Turn的函數不好調用，我用數學方法完成了turn的轉換
+     */
     public boolean getTurn() {
         return true;
     }

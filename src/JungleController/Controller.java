@@ -1,11 +1,8 @@
 package JungleController;
 
 import JungleModel.Board;
-import JungleModel.Board.*;
 import JungleModel.Piece;
 import JungleView.View;
-import Exception.WrongMovement;
-import Exception.LosePieces;
 
 import java.util.Scanner;
 
@@ -24,10 +21,11 @@ public class Controller {
          |
          x
          */
+        int turn=1;//玩家一
         Board board=new Board();
         View v=new View();
         v.viewAll(board);
-        System.out.println("Input (format:xx w/a/s/d) :\t");//例如輸入11 s，讓坐標（1，1）的棋子向下移動一格
+        System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");//例如輸入11 s，讓坐標（1，1）的棋子向下移動一格
         Scanner scan=new Scanner(System.in);
         String input=scan.nextLine();
         while(input!="quit"){
@@ -40,13 +38,15 @@ public class Controller {
             else{//不能通行
             }
             v.viewAll(board);
+            turn=2/turn;//在玩家一二切換
+            System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
             input=scan.nextLine();
         }
 
     }
 
 
-    public static void replace(Piece p,Board board) {//清理被吃掉的棋子,實際上沒用到，因為判斷可以移動後就直接取代了棋盤上該棋子的位置
+    public void replace(Piece p, Board board) {//清理被吃掉的棋子,實際上沒用到，因為判斷可以移動後就直接取代了棋盤上該棋子的位置
         Piece pastPiece=new emptyPiece(p.getX(),p.getY());
         board.tile[p.getX()][p.getY()]=pastPiece;
     }
