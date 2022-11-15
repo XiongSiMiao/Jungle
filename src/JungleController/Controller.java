@@ -17,17 +17,28 @@ public class Controller {
     public static void start() {
         /*
         以下都為檢測輸出結果
+        因為橫著更對不起導致坐標有點怪異
+         -------->y
+         |
+         |
+         |
+         x
          */
         Board board=new Board();
         View v=new View();
-        v.printBoard(board);
-        v.printPieces(board);
-        movement(board.tile[0][0],"w",board);
-        System.out.println();
-        v.printPieces(board);
-        System.out.println();
-        movement(board.tile[2][0],"w",board);
         v.viewAll(board);
+        System.out.println("Input (format:xx w/a/s/d) :\t");
+        Scanner scan=new Scanner(System.in);
+        String input=scan.nextLine();
+        while(input!="quit"){
+            int x,y;
+            x=Integer.valueOf(input.substring(0, 1))-1;//讓用戶輸入（1，1），其實算法是（0，0）
+            y=Integer.valueOf(input.substring(1, 2))-1;
+            movement(board.tile[x][y],input.substring(3,4),board);
+            v.viewAll(board);
+            input=scan.nextLine();
+        }
+
     }
 
 
@@ -53,22 +64,22 @@ public class Controller {
             /*
             缺少一个边界检查
              */
-            case "w":
+            case "d":
                 board.tile[p.getX()][p.getY()]=pastPiece;
                 p.move(p.getX(),p.getY()+1);
                 board.tile[p.getX()][p.getY()]=p;
                 break;
-            case "a":
+            case "w":
                 board.tile[p.getX()][p.getY()]=pastPiece;
                 p.move(p.getX()-1,p.getY());
                 board.tile[p.getX()][p.getY()]=p;
                 break;
-            case "s":
+            case "a":
                 board.tile[p.getX()][p.getY()]=pastPiece;
                 p.move(p.getX(),p.getY()-1);
                 board.tile[p.getX()][p.getY()]=p;
                 break;
-            case "d":
+            case "s":
                 board.tile[p.getX()][p.getY()]=pastPiece;
                 p.move(p.getX()+1,p.getY());
                 board.tile[p.getX()][p.getY()]=p;
