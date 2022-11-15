@@ -15,7 +15,7 @@ class BoardTest {
     Boolean win = null;//true means owner 1 won, false means owner 2 won, null means still playing
     @Test
     void getWon() {//Test getWon() in class Board
-        assertEquals(win,board.getWon());
+        assertEquals(win,board.getWon(1,board));
     }
     @Test
     void getTurn() {//Test getTurn in class Board

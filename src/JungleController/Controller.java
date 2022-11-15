@@ -24,24 +24,29 @@ public class Controller {
         int turn=1;//玩家一
         Board board=new Board();
         View v=new View();
+        Boolean win=board.getWon(turn,board);
         v.viewAll(board);
         System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");//例如輸入11 s，讓坐標（1，1）的棋子向下移動一格
         Scanner scan=new Scanner(System.in);
         String input=scan.nextLine();
-        while(input!="quit"){
+        while(win==null){
             int x,y;
             x=Integer.valueOf(input.substring(0, 1))-1;//讓用戶輸入（1，1），其實真實坐標是（0，0）
             y=Integer.valueOf(input.substring(1, 2))-1;
             if(moveChecker(board.tile[x][y],input.substring(3,4),board)){//檢查發現可以通行
                 movement(board.tile[x][y],input.substring(3,4),board);
             }
-            else{//不能通行
+            else{//檢查發現不能這麼走
             }
             v.viewAll(board);
-            turn=2/turn;//在玩家一二切換
-            System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
-            input=scan.nextLine();
+            win=board.getWon(turn,board);//檢查勝負
+            if(win==null){
+                turn=2/turn;//在玩家一二切換
+                System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
+                input=scan.nextLine();
+            }
         }
+        System.out.println("\nCongratulations!\nPlayer"+turn+" wins!");
 
     }
 

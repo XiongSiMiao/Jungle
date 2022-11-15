@@ -4,7 +4,7 @@ import JungleController.Controller;
 import JungleModel.PieceType.*;
 
 public class Board {
-    private Boolean win;
+    public Boolean win;
     public Piece[][] tile = new Piece[20][20];//contain all the pieces, new added
     public final boardTypes[][] map=new boardTypes[20][20];// contain all the boardTypes, new added
 
@@ -13,8 +13,38 @@ public class Board {
         boardInitialize();
     }
 
-    public Boolean getWon() {
-        return null;
+    public Boolean getWon(int turn,Board board) {
+        if(turn==1){//Player 1 wins
+            if(board.tile[8][3].getOwner()==1){//player1's piece reach the player2's den
+                win=true;
+            }
+            else{
+                win=true;
+                for(int i=0;i<9;i++){
+                    for(int j=0;j<7;j++){
+                        if (board.tile[i][j].getOwner()==2) {
+                            win=null;
+                        }
+                    }
+                }
+            }
+        }
+        if(turn==2){//player2 wins
+            if(board.tile[0][3].getOwner()==2){//player2's piece reach the player1's den
+                win=false;
+            }
+            else{
+                win=false;
+                for(int i=0;i<9;i++){
+                    for(int j=0;j<7;j++){
+                        if (board.tile[i][j].getOwner()==1) {//if find player1's piece then continue, else player2 wins
+                            win=null;
+                        }
+                    }
+                }
+            }
+        }
+        return win;
     }
 
     public Boolean setWin(Boolean win) {

@@ -4,7 +4,7 @@ import JungleModel.Board;
 
 public class View {
     public View(){}//沒對齊
-    public void viewAll(Board  board){//new added
+    public void viewAll(Board  board){
         for(int i=0;i<9;i++){
             for(int j=0;j<7;j++){
                 if(board.tile[i][j].name!="   ") {
