@@ -16,11 +16,9 @@ public class Controller {
 
     public static void start() {
         Board board=new Board();
-        View view=new View();
-        Scanner scan = new Scanner(System.in);
-        String input = scan.next();
-        while(input != "quit"){
-        }
+        View v=new View();
+        v.printBoard(board);
+        v.printPieces(board);
     }
 
 
@@ -34,6 +32,7 @@ public class Controller {
             this.rank=0;
             this.name="   ";
         }
+
         @Override
         protected String getName() {
             return "   ";
