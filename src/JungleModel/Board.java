@@ -4,7 +4,7 @@ import JungleModel.PieceType.*;
 
 public class Board {
     private Boolean win;
-    public final Piece[][] tile = new Piece[20][20];//contain all the pieces, new added
+    public Piece[][] tile = new Piece[20][20];//contain all the pieces, new added
     public final boardTypes[][] map=new boardTypes[20][20];// contain all the boardTypes, new added
 
     public Board() {
