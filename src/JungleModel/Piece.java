@@ -19,23 +19,19 @@ public abstract class Piece {
 
     public boolean canReplace(Piece p2) {
         /* if 2 pieces are at the same place,
-        and rank of piece1 > rank of piece2 (except rat and elephant),
+        and rank of piece1 >= rank of piece2 (except rat and elephant),
         then piece1 can replace piece2.
         */
         boolean flag=false;
-        int x1=this.getX();
-        int x2= p2.getX();
-        int y1=this.getY();
-        int y2= p2.getY();
         int rank1=this.getRank();
         int rank2=p2.getRank();
         int owner1=this.getOwner();
         int owner2= p2.getOwner();
-        if((x1==x2)&&(y1==y2)&&(owner1!=owner2)){// two pieces are at the same place and have different owners.
+        if(owner1!=owner2){// two pieces are at the same place and have different owners.
             if(rank1==1&&rank2==8){//rat can eat elephant
                 flag=true;
             }
-            if(rank1>rank2){
+            if(rank1>=rank2){
                 flag=true;
                 if(rank1==8&&rank2==1){//elephant can not eat rat
                     flag=false;

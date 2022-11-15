@@ -34,7 +34,11 @@ public class Controller {
             int x,y;
             x=Integer.valueOf(input.substring(0, 1))-1;//讓用戶輸入（1，1），其實真實坐標是（0，0）
             y=Integer.valueOf(input.substring(1, 2))-1;
-            movement(board.tile[x][y],input.substring(3,4),board);
+            if(moveChecker(board.tile[x][y],input.substring(3,4),board)){//檢查發現可以通行
+                movement(board.tile[x][y],input.substring(3,4),board);
+            }
+            else{//不能通行
+            }
             v.viewAll(board);
             input=scan.nextLine();
         }
@@ -42,7 +46,10 @@ public class Controller {
     }
 
 
-    public static void replace(Piece p) {}//replace the opponent's piece
+    public static void replace(Piece p,Board board) {//清理被吃掉的棋子,實際上沒用到，因為判斷可以移動後就直接取代了棋盤上該棋子的位置
+        Piece pastPiece=new emptyPiece(p.getX(),p.getY());
+        board.tile[p.getX()][p.getY()]=pastPiece;
+    }
 
     public static class emptyPiece extends Piece{//set an empty piece
         public emptyPiece(int locationX, int locationY){
@@ -60,11 +67,8 @@ public class Controller {
     }
     public static void movement(Piece p, String dir, Board board){
         Piece pastPiece=new emptyPiece(p.getX(),p.getY());
-        if((p.getRank() != 6)&&(p.getRank()!=7)){//當移動的棋子不為老虎的時候，每次移動都只能移動一格
+        if((p.getRank() != 6)&&(p.getRank()!=7)){//當移動的棋子不為老虎獅子的時候，每次移動都只能移動一格
             switch (dir){
-                /*
-                缺少一个边界检查
-                 */
                 case "d":
                     board.tile[p.getX()][p.getY()]=pastPiece;
                     p.move(p.getX(),p.getY()+1);
@@ -136,7 +140,7 @@ public class Controller {
         }
     }//change p.locationX and p.locationY
 
-    public boolean moveChecker(Piece p, String dir,Board board) {
+    public static boolean moveChecker(Piece p, String dir,Board board) {
         boolean flag=true;
         int tempX = 0,tempY=0;//棋子將移動到的坐標
         switch(dir){
@@ -157,8 +161,56 @@ public class Controller {
                 tempY=p.getY();
                 break;
         }
-        if(board.tile[tempX][tempY].name=="   "){//檢測移動目標有沒有棋子
-
+        if(p.getRank()!=1 && p.getRank()!=6 && p.getRank()!=7){//Cat,dog,elephant,leopard,wolf can't move if the destination has water
+            if(board.map[tempX][tempY].getName()==" 水 "){//前方有水不能走
+                flag=false;
+            }
+            else{//前方沒水
+                if(board.tile[tempX][tempY].name != "   "){//前方有棋子的情況
+                    if(!p.canReplace(board.tile[tempX][tempY])){//如果不能吃掉，則不能通行
+                        flag=false;
+                    }
+                }
+            }
+        }
+        else{//選擇移動的棋子為老鼠、老虎、獅子
+            if(p.getRank()==1){//棋子為老鼠時
+                if(board.map[p.getX()][p.getY()].getName()==" 水 "){//老鼠在河裡時
+                    if(board.map[tempX][tempY].getName() != " 水 " && board.tile[tempX][tempY].rank==8){//當目的地在岸上但岸上有大象
+                        flag=false;
+                    }
+                }
+            }
+            else{//棋子為老虎獅子
+                if(board.map[tempX][tempY].getName()!=" 水 "){//當目標地點不是水
+                    if(board.tile[tempX][tempY].name != "   "){//目標地點有棋子
+                        if(!p.canReplace(board.tile[tempX][tempY])){//如果不能吃掉，則不能通行
+                            flag=false;
+                        }
+                    }
+                }
+                else{//當目的地在水中
+                    switch(dir){//修正目的地正確位置
+                        case "d":
+                            tempY=tempY+2;
+                            break;
+                        case "w":
+                            tempX =p.getX()-4;
+                            break;
+                        case "a":
+                            tempY=p.getY()-2;
+                            break;
+                        case "s":
+                            tempX =p.getX()+4;
+                            break;
+                    }
+                    if(board.tile[tempX][tempY].name != "   "){//目標地點有棋子
+                        if(!p.canReplace(board.tile[tempX][tempY])){//如果不能吃掉，則不能通行
+                            flag=false;
+                        }
+                    }
+                }
+            }
         }
 
 
