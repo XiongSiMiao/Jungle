@@ -19,6 +19,9 @@ public class Controller {
         View v=new View();
         v.printBoard(board);
         v.printPieces(board);
+        movement(board.tile[0][0],"w",board);
+        System.out.println();
+        v.printPieces(board);
     }
 
 
@@ -38,7 +41,7 @@ public class Controller {
             return "   ";
         }
     }
-    public void movement(Piece p, String dir, Board board) throws WrongMovement{
+    public static void movement(Piece p, String dir, Board board){
         Piece pastPiece=new emptyPiece(p.getX(),p.getY());
         switch (dir){
             /*
