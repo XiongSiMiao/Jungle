@@ -151,13 +151,13 @@ public class Board {
     public boolean inTrap(Piece p) {// check if the piece is in trap
         boolean flag = false;
         if (p.getOwner() == 2) {
-            if ((p.getY() == 3 && p.getX() == 1) || (p.getY() == 5 && p.getX() == 1)
-                    || (p.getY() == 4 && p.getX() == 2)) {
+            if ((p.getY() == 2 && p.getX() == 0) || (p.getY() == 4 && p.getX() == 0)
+                    || (p.getY() == 3 && p.getX() == 1)) {
                 flag = true;
             }
         } else {
-            if ((p.getY() == 3 && p.getX() == 9) || (p.getY() == 5 && p.getX() == 9)
-                    || (p.getY() == 4 && p.getX() == 8)) {
+            if ((p.getY() == 2 && p.getX() == 8) || (p.getY() == 4 && p.getX() == 8)
+                    || (p.getY() == 3 && p.getX() == 7)) {
                 flag = true;
             }
         }
