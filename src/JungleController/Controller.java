@@ -13,8 +13,6 @@ public class Controller {
 
     public static void start() {
         /*
-        以下都為檢測輸出結果
-        因為橫著更對不起導致坐標有點怪異
          -------->y
          |
          |
