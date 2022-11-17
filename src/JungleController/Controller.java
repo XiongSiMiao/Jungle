@@ -37,6 +37,7 @@ public class Controller {
                 movement(board.tile[x][y],input.substring(3,4),board);
             }
             else{//檢查發現不能這麼走
+                System.out.println("Wrong movement!\nYou are not allowed to move now.");
             }
             v.viewAll(board);
             win=board.getWon(turn,board);//檢查勝負
@@ -62,12 +63,12 @@ public class Controller {
             this.locationY=locationY;
             this.owner=0;
             this.rank=0;
-            this.name="   ";
+            this.name="    ";
         }
 
         @Override
         protected String getName() {
-            return "   ";
+            return "    ";
         }
     }
     public static void movement(Piece p, String dir, Board board){
@@ -171,8 +172,8 @@ public class Controller {
                 flag=false;
             }
             else{//前方沒水
-                if(board.tile[tempX][tempY].name != "   "){//前方有棋子的情況
-                    if(!p.canReplace(board.tile[tempX][tempY])){//如果不能吃掉，則不能通行
+                if(board.tile[tempX][tempY].name != "    "){//前方有棋子的情況
+                    if(!p.canReplace(board.tile[tempX][tempY],board)){//如果不能吃掉，則不能通行
                         flag=false;
                     }
                 }
@@ -188,8 +189,8 @@ public class Controller {
             }
             else{//棋子為老虎獅子
                 if(board.map[tempX][tempY].getName()!=" 水 "){//當目標地點不是水
-                    if(board.tile[tempX][tempY].name != "   "){//目標地點有棋子
-                        if(!p.canReplace(board.tile[tempX][tempY])){//如果不能吃掉，則不能通行
+                    if(board.tile[tempX][tempY].name != "    "){//目標地點有棋子
+                        if(!p.canReplace(board.tile[tempX][tempY],board)){//如果不能吃掉，則不能通行
                             flag=false;
                         }
                     }
@@ -209,8 +210,8 @@ public class Controller {
                             tempX =p.getX()+4;
                             break;
                     }
-                    if(board.tile[tempX][tempY].name != "   "){//目標地點有棋子
-                        if(!p.canReplace(board.tile[tempX][tempY])){//如果不能吃掉，則不能通行
+                    if(board.tile[tempX][tempY].name != "    "){//目標地點有棋子
+                        if(!p.canReplace(board.tile[tempX][tempY],board)){//如果不能吃掉，則不能通行
                             flag=false;
                         }
                     }

@@ -7,7 +7,7 @@ public class View {
     public void viewAll(Board  board){
         for(int i=0;i<9;i++){
             for(int j=0;j<7;j++){
-                if(board.tile[i][j].name!="   ") {
+                if(board.tile[i][j].name!="    ") {//if there is a piece here then print piece ,otherwise print board
                     System.out.printf("|"+"%s"+"|",board.tile[i][j].name);
                 }
                 else

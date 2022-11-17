@@ -1,5 +1,6 @@
 package test.model;
 
+import JungleModel.Board;
 import JungleModel.PieceType.Cat;
 import JungleModel.PieceType.Elephant;
 import JungleModel.PieceType.Rat;
@@ -17,9 +18,10 @@ class PieceTest {
 
     @Test
     void canReplace(){
-        assertTrue(c.canReplace(r));
-        assertTrue(r.canReplace(e));
-        assertTrue(!e.canReplace(r));
+        Board board=new Board();
+        assertTrue(c.canReplace(r,board));
+        assertTrue(r.canReplace(e,board));
+        assertTrue(!e.canReplace(r,board));
     }// Test canReplace() in class Piece
 
 

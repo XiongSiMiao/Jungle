@@ -17,7 +17,7 @@ public abstract class Piece {
         return this;
     }
 
-    public boolean canReplace(Piece p2) {
+    public boolean canReplace(Piece p2,Board board) {
         /* if 2 pieces are at the same place,
         and rank of piece1 >= rank of piece2 (except rat and elephant),
         then piece1 can replace piece2.
@@ -36,6 +36,9 @@ public abstract class Piece {
                 if(rank1==8&&rank2==1){//elephant can not eat rat
                     flag=false;
                 }
+            }
+            if(board.inTrap(p2)){
+                flag=true;
             }
         }
         return flag;
