@@ -31,23 +31,35 @@ public class Controller {
         String input=scan.nextLine();
         while(win==null){
             int x,y;
-            x=Integer.valueOf(input.substring(0, 1))-1;//讓用戶輸入（1，1），其實真實坐標是（0，0）
-            y=Integer.valueOf(input.substring(1, 2))-1;
-            if(moveChecker(board.tile[x][y],input.substring(3,4),board)){//檢查發現可以通行
-                movement(board.tile[x][y],input.substring(3,4),board);
-            }
-            else{//檢查發現不能這麼走
-                System.out.println("Wrong movement!\nYou are not allowed to move now.");
-            }
-            v.viewAll(board);
-            win=board.getWon(turn,board);//檢查勝負
-            if(win==null){
-                turn=2/turn;//在玩家一二切換
+            try {//catch numberformatexception 但是沒有設定和r有關係的字母 因爲input的局限 只要輸入任何字母就能重啓游戲
+                x=Integer.valueOf(input.substring(0, 1))-1;//讓用戶輸入（1，1），其實真實坐標是（0，0）
+                y=Integer.valueOf(input.substring(1, 2))-1;
+                if(moveChecker(board.tile[x][y],input.substring(3,4),board)){//檢查發現可以通行
+                    movement(board.tile[x][y],input.substring(3,4),board);
+                }
+                else{//檢查發現不能這麼走
+                    System.out.println("Wrong movement!\nYou are not allowed to move now.");//wrong movement will re-enter
+                    System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
+                    input=scan.nextLine();
+                }
+                v.viewAll(board);
+                win=board.getWon(turn,board);//檢查勝負
+                if(win==null){
+                    turn=2/turn;//在玩家一二切換
+                    System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
+                    input=scan.nextLine();
+                }else{
+                    System.out.println("\nCongratulations!\nPlayer"+turn+" wins!");
+                }
+            } catch (NumberFormatException e) {//restart the game
+                board.reset();
+                turn = 1;
+                v.viewAll(board);
+                win = board.getWon(turn, board);
                 System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
                 input=scan.nextLine();
             }
         }
-        System.out.println("\nCongratulations!\nPlayer"+turn+" wins!");
 
     }
 
