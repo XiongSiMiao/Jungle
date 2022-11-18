@@ -22,18 +22,18 @@ class ViewTest {
     @Test
     void viewAll() {
         getSpecialBoard();
-        view.viewAll(specialBoard);//Observe the result that print whether is true
+        view.viewAll(specialBoard);//Observe the result to see whether it is true
     }
 
     @Test
     void printBoard() {
         getSpecialBoard();
-        view.printBoard(specialBoard);
+        view.printBoard(specialBoard);//Observe the result to see whether it is true
     }
 
     @Test
     void printPieces() {
         getSpecialBoard();
-        view.printPieces(specialBoard);
+        view.printPieces(specialBoard);//Observe the result to see whether it is true
     }
 }

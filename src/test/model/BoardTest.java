@@ -24,12 +24,12 @@ class BoardTest {
 
     @Test
     void jumpOverRiver(){//Test jumpOverRiver in class Board
-        assertTrue(board.jumpOverRiver());
+        assertTrue(!board.jumpOverRiver(c));
     }
 
     @Test
     void inTrap(){// Test inTrap in class Board
-        assertTrue(board.inTrap(c));
+        assertTrue(!board.inTrap(c));
     }
 
     @Test
@@ -38,7 +38,7 @@ class BoardTest {
     }
     @Test
     void setTurn() {
-        assertEquals(!turn,board.setTurn());
+        assertEquals(!turn,board.setTurn(board));
         //Test setTurn() in class board(set turn into false if it is true;)
     }
 }
