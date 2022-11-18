@@ -29,7 +29,7 @@ class BoardTest {
 
     @Test
     void inTrap(){// Test inTrap in class Board
-        assertTrue(board.inTrap(c));
+        assertTrue(!board.inTrap(c));
     }
 
     @Test
