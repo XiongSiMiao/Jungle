@@ -50,9 +50,6 @@ public class Board {
         return null;
     }
 
-    /*
-     * 下面兩個關於Turn的函數不好調用，我用數學方法完成了turn的轉換
-     */
     public boolean getTurn() {
         return true;
     }
@@ -82,7 +79,7 @@ public class Board {
         }
     }
 
-    private void boardInitialize() {// new added
+    private void boardInitialize() {
         map[0][3] = boardTypes.Den;
         map[8][3] = boardTypes.Den;
         map[0][2] = boardTypes.Trap;
@@ -144,8 +141,8 @@ public class Board {
         tile[6][0] = e2;
     }
 
-    private boolean capture() {
-        return true;
+    private boolean capture(Piece piece,Board board,int x,int y) {
+        return board.tile[x][y].canReplace(piece,board);
     }
 
     public boolean inTrap(Piece p) {// check if the piece is in trap
