@@ -54,8 +54,8 @@ public class Board {
         return true;
     }
 
-    public boolean setTurn() {
-        return false;
+    public boolean setTurn(Board board) {
+        return !board.getTurn();
     }
 
     public void reset() {
@@ -161,8 +161,11 @@ public class Board {
         return flag;
     }
 
-    public boolean jumpOverRiver() {
-
-        return true;
+    public boolean jumpOverRiver(Piece piece) {
+        if(piece.getRank()==6||piece.getRank()==7){
+            return true;
+        }
+        else
+            return false;
     }
 }
