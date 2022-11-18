@@ -29,7 +29,7 @@ public class Controller {
         String input=scan.nextLine();
         while(win==null){
             int x,y;
-            try {//catch numberformatexception 但是沒有設定和r有關係的字母 因爲input的局限 只要輸入任何字母就能重啓游戲
+            try {//輸入r重設游戲
                 x=Integer.valueOf(input.substring(0, 1))-1;//讓用戶輸入（1，1），其實真實坐標是（0，0）
                 y=Integer.valueOf(input.substring(1, 2))-1;
                 if(moveChecker(board.tile[x][y],input.substring(3,4),board)){//檢查發現可以通行
@@ -50,17 +50,25 @@ public class Controller {
                     System.out.println("\nCongratulations!\nPlayer"+turn+" wins!");
                 }
             } catch (NumberFormatException e) {//restart the game
-                board.reset();
-                turn = 1;
-                v.viewAll(board);
-                win = board.getWon(turn, board);
-                System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
-                input=scan.nextLine();
+                char reset = input.charAt(0);
+                if(reset == 'r'){
+                    board.reset();
+                    turn = 1;
+                    v.viewAll(board);
+                    win = board.getWon(turn, board);
+                    System.out.println("The game has reseted.");
+                    System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
+                    input=scan.nextLine();
+                }
             }
         }
 
     }
 
+
+    private static String getType(Object a) {
+        return a.getClass().toString();
+    }
 
     public void replace(Piece p, Board board) {//清理被吃掉的棋子,實際上沒用到，因為判斷可以移動後就直接取代了棋盤上該棋子的位置
         Piece pastPiece=new emptyPiece(p.getX(),p.getY());
