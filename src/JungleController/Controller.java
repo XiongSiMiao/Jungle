@@ -19,54 +19,75 @@ public class Controller {
          |
          x
          */
-        
-        int turn=1;//player 1
-        Board board=new Board();
-        View v=new View();
-        Boolean win=board.getWon(turn,board);
-        v.viewAll(board);
-        System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter r to restart) :\t");//例如輸入11 s，讓坐標（1，1）的棋子向下移動一格
-        Scanner scan=new Scanner(System.in);
-        String input=scan.nextLine();
-        while(win==null){
-            int x,y;
-            try {//輸入r重設游戲
-                x=Integer.valueOf(input.substring(0, 1))-1;//讓用戶輸入（1，1），其實真實坐標是（0，0）
-                y=Integer.valueOf(input.substring(1, 2))-1;
-                if(moveChecker(board.tile[x][y],input.substring(3,4),board)){//check whether the piece can move in this way or not
-                    movement(board.tile[x][y],input.substring(3,4),board);
-                }
-                else{//moving in a wrong direction
-                    v.viewAll(board);
-                    System.out.println("Wrong movement!\nYou are not allowed to move in this way.\nPlease try again.");//wrong movement will re-enter
-                    System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter r to restart) :\t");
-                    input=scan.nextLine();
-                    continue;
-                }
+        int switchValue;
+        System.out.println("============================");
+        System.out.println("|       Jungle Game        |");
+        System.out.println("============================");
+        System.out.println("| Options:                 |");
+        System.out.println("|1. Enter 1 to start       |");
+        System.out.println("|2. Enter 2 to exit        |");
+        System.out.println("============================");
+        Scanner scan1=new Scanner(System.in);
+        String input1=scan1.nextLine();
+        switchValue = Integer.parseInt(input1);
+    
+        // Switch construct
+        switch (switchValue) {
+            case 1:
+                int turn=1;//player 1
+                Board board=new Board();
+                View v=new View();
+                Boolean win=board.getWon(turn,board);
                 v.viewAll(board);
-                win=board.getWon(turn,board);//check if the player wins
-                if(win==null){
-                    turn=2/turn;//turn to another player
-                    System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter r to restart) :\t");
-                    input=scan.nextLine();
-                }else{
-                    System.out.println("\nCongratulations!\nPlayer"+turn+" wins!");
+                System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter r to restart) :\t");//例如輸入11 s，讓坐標（1，1）的棋子向下移動一格
+                Scanner scan=new Scanner(System.in);
+                String input=scan.nextLine();
+                while(win==null){
+                    int x,y;
+                    try {//輸入r重設游戲
+                        x=Integer.valueOf(input.substring(0, 1))-1;//讓用戶輸入（1，1），其實真實坐標是（0，0）
+                        y=Integer.valueOf(input.substring(1, 2))-1;
+                        if(moveChecker(board.tile[x][y],input.substring(3,4),board)){//check whether the piece can move in this way or not
+                            movement(board.tile[x][y],input.substring(3,4),board);
+                        }
+                        else{//moving in a wrong direction
+                            v.viewAll(board);
+                            System.out.println("Wrong movement!\nYou are not allowed to move in this way.\nPlease try again.");//wrong movement will re-enter
+                            System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter r to restart) :\t");
+                            input=scan.nextLine();
+                            continue;
+                        }
+                        v.viewAll(board);
+                        win=board.getWon(turn,board);//check if the player wins
+                        if(win==null){
+                            turn=2/turn;//turn to another player
+                            System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter r to restart) :\t");
+                            input=scan.nextLine();
+                        }else{
+                            System.out.println("\nCongratulations!\nPlayer"+turn+" wins!");
+                        }
+                    } catch (NumberFormatException e) {//restart the game
+                        char reset = input.charAt(0);
+                        if(reset == 'r'){
+                            board.reset();
+                            turn = 1;
+                            v.viewAll(board);
+                            win = board.getWon(turn, board);
+                            System.out.println("The game has reseted.");
+                            System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
+                            input=scan.nextLine();
+                        }
+                    }
                 }
-            } catch (NumberFormatException e) {//restart the game
-                char reset = input.charAt(0);
-                if(reset == 'r'){
-                    board.reset();
-                    turn = 1;
-                    v.viewAll(board);
-                    win = board.getWon(turn, board);
-                    System.out.println("The game has reseted.");
-                    System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
-                    input=scan.nextLine();
-                }
-            }
+        case 2:
+          System.out.println("Exit selected");
+          break;
+        default:
+          System.out.println("Invalid selection");
+          break; // This break is not necessary
         }
+      }
 
-    }
 
 
     public void replace(Piece p, Board board) {//clean up the captured pieces
