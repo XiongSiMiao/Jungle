@@ -37,9 +37,11 @@ public class Controller {
                     movement(board.tile[x][y],input.substring(3,4),board);
                 }
                 else{//moving in a wrong direction
+                    v.viewAll(board);
                     System.out.println("Wrong movement!\nYou are not allowed to move in this way.\nPlease try again.");//wrong movement will re-enter
                     System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter r to restart) :\t");
                     input=scan.nextLine();
+                    continue;
                 }
                 v.viewAll(board);
                 win=board.getWon(turn,board);//check if the player wins
