@@ -24,7 +24,7 @@ public class Controller {
         View v=new View();
         Boolean win=board.getWon(turn,board);
         v.viewAll(board);
-        System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");//例如輸入11 s，讓坐標（1，1）的棋子向下移動一格
+        System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter any letter to restart) :\t");//例如輸入11 s，讓坐標（1，1）的棋子向下移動一格
         Scanner scan=new Scanner(System.in);
         String input=scan.nextLine();
         while(win==null){
@@ -36,15 +36,15 @@ public class Controller {
                     movement(board.tile[x][y],input.substring(3,4),board);
                 }
                 else{//檢查發現不能這麼走
-                    System.out.println("Wrong movement!\nYou are not allowed to move now.");//wrong movement will re-enter
-                    System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
+                    System.out.println("Wrong movement!\nYou are not allowed to move in this way.\nPlease try again.");//wrong movement will re-enter
+                    System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter any letter to restart) :\t");
                     input=scan.nextLine();
                 }
                 v.viewAll(board);
                 win=board.getWon(turn,board);//檢查勝負
                 if(win==null){
                     turn=2/turn;//在玩家一二切換
-                    System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
+                    System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter any letter to restart) :\t");
                     input=scan.nextLine();
                 }else{
                     System.out.println("\nCongratulations!\nPlayer"+turn+" wins!");
@@ -54,7 +54,7 @@ public class Controller {
                 turn = 1;
                 v.viewAll(board);
                 win = board.getWon(turn, board);
-                System.out.println("Player"+turn+" to input (format:xx w/a/s/d) :\t");
+                System.out.println("Player"+turn+" to input (format:xy w/a/s/d;or enter any letter to restart) :\t");
                 input=scan.nextLine();
             }
         }
