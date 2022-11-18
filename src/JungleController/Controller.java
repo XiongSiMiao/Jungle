@@ -12,7 +12,7 @@ public class Controller {
     }
 
     public static void start() {
-        /*
+         /*
          -------->y
          |
          |
@@ -30,7 +30,7 @@ public class Controller {
         Scanner scan1=new Scanner(System.in);
         String input1=scan1.nextLine();
         switchValue = Integer.parseInt(input1);
-    
+
         // Switch construct
         switch (switchValue) {
             case 1:
@@ -79,15 +79,15 @@ public class Controller {
                         }
                     }
                 }
-        case 2:
-          System.out.println("Exit selected");
-          break;
-        default:
-          System.out.println("Invalid selection");
-          break; // This break is not necessary
+            case 2:
+                System.out.println("Exit selected");
+                break;
+            default:
+                System.out.println("Invalid selection");
+                break; // This break is not necessary
         }
-      }
 
+    }
 
 
     public void replace(Piece p, Board board) {//clean up the captured pieces
@@ -168,13 +168,13 @@ public class Controller {
                         tempY=tempY+2;
                         break;
                     case "w":
-                        tempX =p.getX()-4;
+                        tempX =tempX-3;
                         break;
                     case "a":
-                        tempY=p.getY()-2;
+                        tempY=tempY-2;
                         break;
                     case "s":
-                        tempX =p.getX()+4;
+                        tempX =tempX+3;
                         break;
                 }
                 board.tile[p.getX()][p.getY()]=pastPiece;//set the original place empty
@@ -239,13 +239,13 @@ public class Controller {
                             tempY=tempY+2;
                             break;
                         case "w":
-                            tempX =p.getX()-4;
+                            tempX =tempX-3;
                             break;
                         case "a":
-                            tempY=p.getY()-2;
+                            tempY=tempY-2;
                             break;
                         case "s":
-                            tempX =p.getX()+4;
+                            tempX =tempX+3;
                             break;
                     }
                     if(board.tile[tempX][tempY].name != "    "){//there is a piece
